@@ -27,11 +27,11 @@ namespace odessa::engine
     struct fflag_t
     {
         void        *vftable;       ///< +0x00 Virtual function table pointer
-        std::uint8_t gap_0[ 0x90 ]; ///< +0x90 Gap / Padding
-        e_flag_type  flag_type;     ///< +0x98 FFlag type (e_flag_type)
-        e_value_type value_type;    ///< +0x9c FFlag value type (e_value_type)
-        std::uint8_t gap_1[ 0x8 ];  ///< +0xa0 Gap / Padding
-        void        *value;         ///< +0xa8 Pointer to the FFlag's value
+        std::uint8_t gap_0[ 0xA8 ]; ///< +0xA8 Gap / Padding
+        e_flag_type  flag_type;     ///< +0xB0 FFlag type (e_flag_type)
+        e_value_type value_type;    ///< +0xB4 FFlag value type (e_value_type)
+        std::uint8_t gap_1[ 0x8 ];  ///< +0xB8 Gap / Padding
+        void        *value;         ///< +0xC0 Pointer to the FFlag's value
     };
 
     struct nodes_t
