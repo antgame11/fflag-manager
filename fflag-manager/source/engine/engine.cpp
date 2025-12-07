@@ -71,10 +71,10 @@ namespace odessa::engine
 
     void setup( )
     {
-        std::ifstream file( "fflags.json" );
+        std::ifstream file( "ClientAppSettings.json" );
         if ( !file.is_open( ) )
         {
-            std::println( "failed to find fflags.json (doesn't exist)" );
+            std::println( "failed to find ClientAppSettings.json (doesn't exist)" );
             return;
         }
 
@@ -86,7 +86,7 @@ namespace odessa::engine
         }
         catch ( const nlohmann::json::parse_error &eggsception )
         {
-            std::println( "failed to parse fflags.json: {}", eggsception.what( ) );
+            std::println( "failed to parse ClientAppSettings.json: {}", eggsception.what( ) );
             return;
         };
 
@@ -194,7 +194,7 @@ namespace odessa::engine
             std::println( "failed: {}", idx.c_str( ) );
 
         std::println( "============================" );
-        std::println( "would you like to remove these missing flags from fflags.json? (y/n)" );
+        std::println( "would you like to remove these missing flags from ClientAppSettings.json? (y/n)" );
 
         std::string user_input;
         std::cin >> user_input;
@@ -204,7 +204,7 @@ namespace odessa::engine
             for ( const auto &key_to_remove : failed )
                 data.erase( key_to_remove );
 
-            std::ofstream out_file( "fflags.json" );
+            std::ofstream out_file( "ClientAppSettings.json" );
             if ( out_file.is_open( ) )
             {
                 out_file << data.dump( 4 );
@@ -213,7 +213,7 @@ namespace odessa::engine
                 std::println( "removed {} fflags from the list", failed.size( ) );
             }
             else
-                std::println( "couldn't open fflags.json for writing" );
+                std::println( "couldn't open ClientAppSettings.json for writing" );
         }
     }
 } // namespace odessa::engine

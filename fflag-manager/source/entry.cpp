@@ -90,14 +90,14 @@ int CaptureKey() {
     }
 }
 
-// Helper: Check for fflags.json and load keys
+// Helper: Check for ClientAppSettings.json and load keys
 std::vector<std::string> GetJsonKeys() {
     std::vector<std::string> keys;
-    std::ifstream file("fflags.json");
+    std::ifstream file("ClientAppSettings.json");
     
     if (!file.good()) {
         // CREATE FILE IF MISSING
-        std::ofstream outfile("fflags.json");
+        std::ofstream outfile("ClientAppSettings.json");
         outfile << "{\n";
         outfile << "  \"S2PhysicsSenderRate\": 15,\n";
         outfile << "  \"DFFlagDebugPerfMode\": \"True\",\n";

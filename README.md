@@ -1,6 +1,6 @@
 # Roblox FFlag Manager
 
-A simple and fast tool for managing Roblox Fast Flags (FFlags) on the PC client. This tool reads a local `fflags.json` file and applies the specified overrides to the running Roblox process at runtime.
+A simple and fast tool for managing Roblox Fast Flags (FFlags) on the PC client. This tool reads a local `ClientAppSettings.json` file and applies the specified overrides to the running Roblox process at runtime.
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -8,16 +8,16 @@ A simple and fast tool for managing Roblox Fast Flags (FFlags) on the PC client.
 ## Features
 
 - **Dynamic FFlag Overrides**: Modify FFlags in the live Roblox client. Can be run before or during a game session.
-- **Configuration via JSON**: Easily manage all your flag overrides in a simple `fflags.json` file.
+- **Configuration via JSON**: Easily manage all your flag overrides in a simple `ClientAppSettings.json` file.
 - **FFlag Cleanup**: Automatically detects FFlags in your JSON that no longer exist in the client and offers to remove them.
 
 ## Usage
 
-1.  Place `odessa.exe` and your `fflags.json` file in the same folder.
+1.  Place `odessa.exe` and your `ClientAppSettings.json` file in the same folder.
 2.  Launch Roblox.
 3.  Run `odessa.exe`. The program will find the Roblox process, apply the FFlags from your JSON file, and report its progress.
 
-### Example `fflags.json`
+### Example `ClientAppSettings.json`
 
 ```json
 {
